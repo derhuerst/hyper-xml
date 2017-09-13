@@ -1,5 +1,7 @@
 # hyper-xml
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/derhuerst/hyper-xml.svg)](https://greenkeeper.io/)
+
 **A [DSL](https://en.wikipedia.org/wiki/Domain-specific_language) to create JSON trees compatible with [`xml-reader`](https://www.npmjs.com/package/xml-reader).**
 
 [![npm version](https://img.shields.io/npm/v/hyper-xml.svg)](https://www.npmjs.com/package/hyper-xml)
