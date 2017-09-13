@@ -8,7 +8,14 @@ const h = (tag, attrs, children) => {
 
 	const node = {type: 'element', name: tag}
 	if (attrs) node.attributes = attrs
-	if (children) node.children = children
+
+	if (children) {
+		if (!Array.isArray(children)) children = [children]
+		node.children = children.map((child) => {
+			if ('string' === typeof child) return {type: 'text', value: child}
+			return child
+		})
+	}
 
 	return node
 }

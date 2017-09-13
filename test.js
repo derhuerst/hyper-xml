@@ -7,7 +7,8 @@ const h = require('.')
 test('works', (t) => {
 	const p = h('one', {a1: 'v1'}, [
 		h('two', [
-			h('three', {a2: 'v2', a3: 'v3'})
+			h('three', {a2: 'v2', a3: 'v3'}),
+			'four'
 		])
 	])
 
@@ -22,6 +23,9 @@ test('works', (t) => {
 				type: 'element',
 				name: 'three',
 				attributes: {a2: 'v2', a3: 'v3'}
+			}, {
+				type: 'text',
+				value: 'four'
 			}]
 		}]
 	})
