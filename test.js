@@ -2,7 +2,28 @@
 
 const test = require('tape')
 
-const todo = require('.')
+const h = require('.')
 
-test('todo', (t) => {
+test('works', (t) => {
+	const p = h('one', {a1: 'v1'}, [
+		h('two', [
+			h('three', {a2: 'v2', a3: 'v3'})
+		])
+	])
+
+	t.deepEqual(p, {
+		type: 'element',
+		name: 'one',
+		attributes: {a1: 'v1'},
+		children: [{
+			type: 'element',
+			name: 'two',
+			children: [{
+				type: 'element',
+				name: 'three',
+				attributes: {a2: 'v2', a3: 'v3'}
+			}]
+		}]
+	})
+	t.end()
 })
