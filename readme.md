@@ -18,7 +18,32 @@ npm install hyper-xml
 ## Usage
 
 ```js
-todo
+const h = require('hyper-xml')
+
+const one = h('one', {a1: 'v1'}, [
+	h('two', [
+		h('three', {a2: 'v2', a3: 'v3'})
+	])
+])
+```
+
+`one` will look like this:
+
+```js
+{
+	type: 'element',
+	name: 'one',
+	attributes: {a1: 'v1'},
+	children: [{
+		type: 'element',
+		name: 'two',
+		children: [{
+			type: 'element',
+			name: 'three',
+			attributes: {a2: 'v2', a3: 'v3'}
+		}]
+	}]
+}
 ```
 
 
